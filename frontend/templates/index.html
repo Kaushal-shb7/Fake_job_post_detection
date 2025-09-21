@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Job Post Detection</title>
+    <link rel="stylesheet" href="./stylesv.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fake Job Post Detection</h1>
+        <form method="POST" action="/predict">
+            <label for="job_url">Enter Job URL:</label>
+            <input type="url" id="job_url" name="job_url" placeholder="Paste job link here" required>
+            <button type="submit">Check Job</button>
+        </form>
+        {% if result %}
+        <div class="result">
+            <h2>Prediction Result:</h2>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
